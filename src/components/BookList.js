@@ -4,20 +4,20 @@ import Search from "./Search";
 function BookList ({books}) {
 
       //Searching for books by author or title
-    //   const [searchTerm, setSearchTerm] = useState("")
+      const [searchTerm, setSearchTerm] = useState("")
 
-    //   function handleSearch(event){
-    //     setSearchTerm(event.target.value);
-    //   }
+      function handleSearch(event){
+        setSearchTerm(event.target.value);
+      }
 
-    //   const filteredBooks = books.filter((book) => {
-    //     if(searchTerm ===""){
-    //         return true;
-    //     }else{
-    //         return book.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    //         book.authors[0].name.toLowerCase().includes(searchTerm.toLowerCase()); 
-    //     }
-    //   })
+      const filteredBooks = books.filter((book) => {
+        if(searchTerm ===""){
+            return true;
+        }else{
+            return book.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            book.authors[0].name.toLowerCase().includes(searchTerm.toLowerCase()); 
+        }
+      })
 
     return(
         <div>
