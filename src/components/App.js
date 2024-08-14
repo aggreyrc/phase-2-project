@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Header from './Header';
 import BookList from './BookList';
+import SubjectFilter from './SubjectFilter';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <BookList
       books = {books}
       />
+      <SubjectFilter books={books}/>
   
     </div>
   );
