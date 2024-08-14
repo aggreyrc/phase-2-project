@@ -23,16 +23,18 @@ function BookList ({books}) {
         <div>
             <Search handleSearch={handleSearch} />
             <h2>Book List</h2>
+            <div className="container">
             <ul className="book-list">
             {filteredBooks.slice(0,12).map(book => (
-                <div key={book.id}>
+                <li key={book.id}>
                     <img src={book.formats["image/jpeg"]} alt={book.title} />
                     <h3>{book.title}</h3>
                     <p>Author: {book.authors[0].name}</p>
                     <p>Download: <a href={book.formats["application/x-mobipocket-ebook"]}>Download</a></p>
-                </div>
+                </li>
                 ))};
                 </ul>
+                </div>
         </div>
     )
 }

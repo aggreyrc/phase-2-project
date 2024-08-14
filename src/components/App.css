@@ -13,3 +13,40 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categories{
+  margin: 10px;
+  background-color: aqua;
+  text-align: left;
+  width: 20%;
+  padding: 20px;
+}
+
+.categories li {
+  margin-top: 10px;
+}
+
+.book-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 10px;
+}
+
+.book-list li {
+ width: calc(25% - 10px);
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  width: 20%;
+  text-align: left;
+  background-color: lightgray;
+  border-radius: 10px;
+}

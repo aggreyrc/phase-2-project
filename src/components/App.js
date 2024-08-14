@@ -16,6 +16,17 @@ function App() {
      .catch(error => console.error('Error:', error))
   }, []);
 
+  //Filtering books by subject
+  const[selectedSubject, setSelectedSubject] = useState(null)
+
+  function handleSubjectChange(subject){
+    setBooks(books.filter((book) => book.subjects.includes(subject)));
+  };
+
+  function handleClick(subject){
+    setSelectedSubject(subject)
+    //onSubjectChange(subject);
+  }
 
   return (
     <div className="App">
@@ -23,7 +34,12 @@ function App() {
       <BookList
       books = {books}
       />
-      <SubjectFilter books={books}/>
+      <SubjectFilter 
+      books={books}
+      onSubjectChange={handleSubjectChange}
+      handleClick={handleClick}
+      selectedSubject={selectedSubject}
+      />
   
     </div>
   );
