@@ -1,32 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
 
+const SubjectFilter = ({ categories, onSubjectChange}) => {
+    const handleClick = (subject) => {
+        onSubjectChange(subject);
+      };
 
-const SubjectFilter = ({books, onSubjectChange,selectedSubject,handleClick})=> {
   return (
-    <div>
-        <h1>CATEGORIES</h1>
-        <div className='container'>
-        <ul className='categories'>
-            {books.map((book) => (
-                <li 
-                key={book.id}
-                onClick={handleClick(book.subjects[0])}>
-                    {book.subjects[0]}
-                    </li>
-            ))}
-        </ul>
-        </div>
-        {selectedSubject && (
-            <ul>
-                {books.filter((book) => book.subjects[0] === selectedSubject).map((book) => (
-                    <li key={book.id}>{book.title}</li>
-                ))} 
-                
-            </ul>
-        )}
-        
-        </div>
-  )
-}
+    <div className="container">
+      <h1>CATEGORIES</h1>
+      <ul className="categories">
+        {categories.map((subject, index) => (
+          <li key={index} onClick={() => handleClick(subject)}>
+            {subject}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default SubjectFilter
+export default SubjectFilter;
