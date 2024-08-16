@@ -29,7 +29,9 @@ function BookList({ books, selectedSubject }) {
         {filteredBooks.map((book) => (
           <li key={book.id}>
             <img src={book.formats["image/jpeg"]} alt={book.title} />
-            <h3>{book.title}</h3>
+            <h3>Title:{book.title}</h3>
+            <p>Author: {book.authors[0].name}</p>
+            <p>Subject: {book.subjects[0]}</p>
             <p>
               Download:{" "}
               <a href={book.formats["application/x-mobipocket-ebook"]}>
